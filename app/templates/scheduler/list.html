@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+
+{% block nav %}
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Scheduler</li>
+  </ol>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<h2>Schedulers</h2>
+<ul class="list-group">
+  {% for scheduler in schedulers %}
+  <li class="list-group-item"><pre>{{ scheduler }}</pre></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

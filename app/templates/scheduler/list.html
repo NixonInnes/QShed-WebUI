@@ -12,10 +12,10 @@
 {% endblock %}
 
 {% block content %}
-<h2>Schedulers</h2>
+<h2>Schedules</h2>
 <ul class="list-group">
-  {% for scheduler in schedulers %}
-  <li class="list-group-item"><pre>{{ scheduler }}</pre></li>
+  {% for schedule in schedules %}
+  <li class="list-group-item"><pre>{{ schedule.yaml() }}</pre></li>
   {% endfor %}
 </ul>
 

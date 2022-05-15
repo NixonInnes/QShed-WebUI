@@ -1,0 +1,22 @@
+{% extends "_base.html" %}
+
+{% block nav %}
+
+<nav aria-label="breadcrumb">
+  <ol class="breadcrumb">
+    <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
+    <li class="breadcrumb-item active" aria-current="page">Databases</li>
+  </ol>
+</nav>
+
+{% endblock %}
+
+{% block content %}
+<h2>Databases</h2>
+<ul class="list-group">
+  {% for database in databases %}
+  <li class="list-group-item"><a href="{{ url_for('database.show_database', database_name=database) }}">{{ database }}</a></li>
+  {% endfor %}
+</ul>
+
+{% endblock %}

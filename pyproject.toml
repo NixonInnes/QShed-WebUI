@@ -1,0 +1,21 @@
+[tool.poetry]
+name = "qshed-webui"
+version = "0.1.0"
+description = ""
+authors = ["nixoninnes"]
+
+[tool.poetry.dependencies]
+python = "^3.10"
+Flask = "^2.1.2"
+Flask-Login = "^0.6.1"
+Flask-Migrate = "^3.1.0"
+Flask-SQLAlchemy = "^2.5.1"
+Flask-WTF = "^1.0.1"
+qshed-client = {path = "packages/qshed_client-0.1.0-py3-none-any.whl"}
+bootlets = {path = "packages/bootlets-0.1.0-py3-none-any.whl"}
+
+[tool.poetry.dev-dependencies]
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"

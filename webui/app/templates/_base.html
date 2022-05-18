@@ -32,127 +32,7 @@
   <div id="wrapper">
     <a id="page-top"></a>
     <!-- Sidebar -->
-    <ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
-
-      <!-- Sidebar - Brand -->
-      <a class="sidebar-brand d-flex align-items-center justify-content-center py-5" href="{{ url_for('main.index') }}">
-        <div class="sidebar-brand-icon">
-          <img alt="" src="{{ url_for('static', filename='logo.png') }}" height="90"/>
-        </div>
-      </a>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-
-      <!-- Nav Item - Dashboard -->
-      <li class="nav-item active">
-        <a class="nav-link" href="{{ url_for('main.index') }}">
-          <i class="fas fa-fw fa-home"></i>
-          <span>Home</span></a>
-      </li>
-
-
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Services
-      </div>
-
-      <!-- Nav Item -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseStocks" aria-expanded="true" aria-controls="collapseStocks">
-          <i class="fas fa-fw fa-network-wired"></i>
-          <span>Gateway</span>
-        </a>
-        <div id="collapseStocks" class="collapse" aria-labelledby="headingStocks" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Gateway</h6>
-            <a class="collapse-item" href="#">UK</a>
-            <a class="collapse-item" href="#">US</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseForex" aria-expanded="true" aria-controls="collapseForex">
-          <i class="fas fa-fw fa-database"></i>
-          <span>Database</span>
-        </a>
-        <div id="collapseForex" class="collapse" aria-labelledby="headingForex" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Database</h6>
-            <a class="collapse-item" href="{{ url_for('database.list_databases') }}">List</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Utilities Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapseCrypto" aria-expanded="true" aria-controls="collapseCrypto">
-          <i class="fas fa-fw fa-clock"></i>
-          <span>Scheduler</span>
-        </a>
-        <div id="collapseCrypto" class="collapse" aria-labelledby="headingCrypto" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            <h6 class="collapse-header">Scheduler</h6>
-            <a class="collapse-item" href="{{ url_for('scheduler.list_schedules') }}">List</a>
-            <a class="collapse-item" href="{{ url_for('scheduler.add_schedule') }}">Add</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider">
-
-      {% if current_user.is_authenticated %}
-      <!-- Heading -->
-      <div class="sidebar-heading">
-        Account
-      </div>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-chart-pie"></i>
-          <span>Overview</span></a>
-      </li>
-
-      <!-- Nav Item - Pages Collapse Menu -->
-      <li class="nav-item">
-        <a class="nav-link collapsed" href="#" data-bs-toggle="collapse" data-bs-target="#collapsePages" aria-expanded="true" aria-controls="collapsePages">
-          <i class="fas fa-fw fa-folder"></i>
-          <span>Portfolios</span>
-        </a>
-        <div id="collapsePages" class="collapse" aria-labelledby="headingPages" data-parent="#accordionSidebar">
-          <div class="bg-white py-2 collapse-inner rounded">
-            
-            <a class="collapse-item" href="#">something</a>
-            
-            <div class="collapse-divider"></div>
-            <a class="collapse-item" href="#">Create New</a>
-          </div>
-        </div>
-      </li>
-
-      <!-- Nav Item - Charts -->
-      <li class="nav-item">
-        <a class="nav-link" href="#">
-          <i class="fas fa-fw fa-exchange-alt"></i>
-          <span>Transactions</span></a>
-      </li>
-
-      <!-- Divider -->
-      <hr class="sidebar-divider d-none d-md-block">
-      {% endif %}
-
-      <!-- Sidebar Toggler (Sidebar) -->
-      <div class="text-center d-none d-md-inline">
-        <button class="rounded-circle border-0" id="sidebarToggle">
-        </button>
-      </div>
-
-    </ul>
+    {{ sidebar.draw()|safe}}
     <!-- End of Sidebar -->
 
     <!-- Content Wrapper -->
@@ -264,7 +144,7 @@
       <footer class="sticky-footer bg-white">
         <div class="container my-auto">
           <div class="copyright text-center my-auto">         
-            <span>-- nix --</span>
+            <span><small>Created by </small>NixonInnes</span>
           </div>
         </div>
       </footer>

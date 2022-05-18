@@ -5,8 +5,8 @@
 <nav aria-label="breadcrumb">
   <ol class="breadcrumb">
     <li class="breadcrumb-item"><a href="{{ url_for('main.index') }}">Home</a></li>
-    <li class="breadcrumb-item"><a href="{{ url_for('database.list_databases') }}">Databases</a></li>
-    <li class="breadcrumb-item"><a href="{{ url_for('database.show_database', database_name=database_name) }}">{{ database_name }}</a></li>
+    <li class="breadcrumb-item"><a href="{{ url_for('nosql.list_databases') }}">Databases</a></li>
+    <li class="breadcrumb-item"><a href="{{ url_for('nosql.show_database', database_name=database_name) }}">{{ database_name }}</a></li>
     <li class="breadcrumb-item active" aria-current="page">{{ collection_name }}</li>
   </ol>
 </nav>

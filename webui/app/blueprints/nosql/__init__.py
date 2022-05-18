@@ -1,5 +1,5 @@
 from flask import Blueprint
 
-data_bp = Blueprint("database", __name__)
+nosql_bp = Blueprint("nosql", __name__)
 
 from . import forms, routes

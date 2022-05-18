@@ -15,7 +15,7 @@
 <h2>Databases</h2>
 <ul class="list-group">
   {% for database in databases %}
-  <li class="list-group-item"><a href="{{ url_for('database.show_database', database_name=database) }}">{{ database }}</a></li>
+  <li class="list-group-item"><a href="{{ url_for('nosql.show_database', database_name=database) }}">{{ database }}</a></li>
   {% endfor %}
 </ul>
 

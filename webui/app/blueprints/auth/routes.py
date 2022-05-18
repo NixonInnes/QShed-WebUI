@@ -1,9 +1,12 @@
 from flask import flash, redirect, render_template, url_for
 from flask_login import current_user, login_user, logout_user, login_required
-from bootlets.boots import QuickForm
 
-from ... import db
-from ...models import User
+from bootlets.boots import QuickForm
+from bootlets.html import A
+
+from webui.app import db
+from webui.app.models import User
+from webui.app.html.common import Breadcrumb, PageTitle
 
 from . import auth_bp
 from .forms import LoginForm, RegistrationForm
@@ -25,7 +28,19 @@ def login():
             flash("You have successfully logged in!", "success")
             return redirect(url_for("main.index"))
         flash("Incorrect username or password!", "warning")
-    return render_template("form.html", form=QuickForm(form), title="Login")
+
+    breadcrumb = Breadcrumb(
+        A("Home", href=url_for("main.index")),
+        "Login"
+    )
+    title = PageTitle("Login")
+    content = QuickForm(form)
+    return render_template(
+        "common.html", 
+        breadcrumb=breadcrumb,
+        title=title,
+        content=content
+    )
 
 
 @auth_bp.route("/logout", methods=["GET"])

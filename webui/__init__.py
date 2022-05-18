@@ -2,6 +2,7 @@ import os
 import logging
 
 from .app import create_app
+from .app.html.sidebar import Sidebar
 
 
 logger = logging.getLogger(__name__)
@@ -19,6 +20,8 @@ if os.path.exists(dotenv_path):
 
 
 app = create_app()
+
+app.jinja_env.globals["sidebar"] = Sidebar()
 
 
 @app.shell_context_processor

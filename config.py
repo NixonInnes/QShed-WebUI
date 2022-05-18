@@ -43,6 +43,8 @@ class Config(object):
     LOG_DIR = os.path.join(basedir, "logs")
     LOG_LEVEL = os.getenv("LOG_LEVEL", "DEBUG")
 
+    GATEWAY_ADDRESS = os.getenv("GATEWAY_ADDRESS", "http://localhost:4000")
+
     @classmethod
     def make_log_folders(cls):
         if not os.path.exists(cls.LOG_DIR):

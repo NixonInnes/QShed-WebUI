@@ -11,8 +11,8 @@ Flask-Login = "^0.6.1"
 Flask-Migrate = "^3.1.0"
 Flask-SQLAlchemy = "^2.5.1"
 Flask-WTF = "^1.0.1"
-qshed-client = {path = "packages/qshed_client-0.1.0-py3-none-any.whl"}
 bootlets = {path = "packages/bootlets-0.1.0-py3-none-any.whl"}
+qshed-client = {path = "packages/qshed_client-0.1.1-py3-none-any.whl"}
 
 [tool.poetry.dev-dependencies]
 

@@ -1,0 +1,40 @@
+{% extends "_base.html" %}
+
+{% block nav %}
+
+{% if breadcrumb %}
+  {{ breadcrumb.draw()|safe}}
+{% else %}
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb">
+      <li class="breadcrumb-item active" aria-current="page">Breadcrumb not loaded</li>
+    </ol>
+  </nav>
+{% endif %}
+
+{% endblock %}
+
+
+{% block content %}
+<!-- Page Heading -->
+{% if title %}
+  {{ title.draw()|safe }}
+{% else %}
+  <h1>Undefined Title</h1>
+{% endif %}
+
+<!-- Content Row -->
+{% if content %}
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      {{ content.draw()|safe }}
+    </div>
+  </div>
+{% else %}
+  <div class="row justify-content-center">
+    <div class="col-md-8">
+      <p>No content defined</p>
+    </div>
+  </div>
+{% endif %}
+{% endblock %}

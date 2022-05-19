@@ -140,7 +140,16 @@ class Sidebar(boots.Boot):
                     html.Div(
                         html.H("SQL", _size=6, class_="collapse-header"),
                         # Links
-                        html.A("Root Entities", href=url_for("sql.get_root_entities"), class_="collapse-item"),
+                        html.A(
+                            "Root Entities", 
+                            href=url_for("sql.get_root_entities"), 
+                            class_="collapse-item"
+                        ),
+                        html.A(
+                            "Create Entity",
+                            href=url_for("sql.create_entity"),
+                            class_="collapse-item"
+                        ),
                         class_="bg-white py-2 collapse-inner rounded"
                     ),
                     id="collapseSQL",

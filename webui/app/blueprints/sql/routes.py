@@ -53,6 +53,26 @@ def get_root_entities():
     )
 
 
+@sql_bp.route("/entity/all", methods=["GET"])
+def get_all_entities():
+    entities = client.sql.get_all()
+
+    breadcrumb = Breadcrumb(
+        A("Home", href=url_for("main.index")),
+        "SQL Entity",
+        "All"
+    )
+    title = PageTitle(f"All Entities")
+    content = Container(*[SQLEntityHTML(entity) for entity in entities])
+
+    return render_template(
+        "common.html",
+        breadcrumb=breadcrumb,
+        title=title,
+        content=content
+    )
+
+
 @sql_bp.route("/entity/create", methods=["GET", "POST"])
 def create_entity():
     form = CreateSQLEntityForm()
@@ -61,6 +81,7 @@ def create_entity():
         entity = client.sql.create(
             name=form.name.data,
             data=form.data.data,
+            type_=form.type.data,
             parent=form.parent.data
         )
         flash("New entity created", "success")

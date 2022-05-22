@@ -12,6 +12,7 @@ Flask-Migrate = "^3.1.0"
 Flask-SQLAlchemy = "^2.5.1"
 Flask-WTF = "^1.0.1"
 bootlets = {path = "packages/bootlets-0.1.0-py3-none-any.whl"}
+plotly = "^5.8.0"
 qshed-client = {path = "packages/qshed_client-0.1.2-py3-none-any.whl"}
 
 [tool.poetry.dev-dependencies]

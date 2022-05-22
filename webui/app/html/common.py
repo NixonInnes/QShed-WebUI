@@ -4,7 +4,6 @@ import bootlets.html as html
 
 class Breadcrumb(boots.Boot):
     def build(self):
-        print(self.args)
         return html.Nav(
             html.Ol(
                 boots.Container(
@@ -16,6 +15,7 @@ class Breadcrumb(boots.Boot):
             ),
             aria_label="breadcrumb"
         )
+
 
 class PageTitle(boots.Boot):
     def build(self):

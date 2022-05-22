@@ -177,7 +177,7 @@ class Sidebar(boots.Boot):
                     html.Div(
                         html.H("Timeseries", _size=6, class_="collapse-header"),
                         # Links
-                        html.A("Something", href="#", class_="collapse-item"),
+                        html.A("List", href=url_for("timeseries.list"), class_="collapse-item"),
                         class_="bg-white py-2 collapse-inner rounded"
                     ),
                     id="collapseTimeseries",

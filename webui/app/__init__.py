@@ -33,11 +33,13 @@ def create_app():
     from .blueprints.nosql import nosql_bp as nosql_blueprint
     from .blueprints.scheduler import sched_bp as scheduler_blueprint
     from .blueprints.sql import sql_bp as sql_blueprint
+    from .blueprints.timeseries import timeseries_bp as timeseries_blueprint
 
     app.register_blueprint(main_blueprint)
     app.register_blueprint(auth_blueprint, url_prefix="/auth")
     app.register_blueprint(nosql_blueprint, url_prefix="/nosql")
     app.register_blueprint(scheduler_blueprint, url_prefix="/scheduler")
     app.register_blueprint(sql_blueprint, url_prefix="/sql")
+    app.register_blueprint(timeseries_blueprint, url_prefix="/timeseries")
 
     return app

@@ -26,15 +26,19 @@
 <!-- Content Row -->
 {% if content %}
   <div class="row justify-content-center">
-    <div class="col-md-8">
+    <div class="col-md-11">
       {{ content.draw()|safe }}
     </div>
   </div>
 {% else %}
-  <div class="row justify-content-center">
-    <div class="col-md-8">
-      <p>No content defined</p>
+  {% if html_content %}
+    {{ html_content|safe }}
+  {% else %}
+    <div class="row justify-content-center">
+      <div class="col-md-11">
+        <p>No content defined</p>
+      </div>
     </div>
-  </div>
+  {% endif %}
 {% endif %}
 {% endblock %}
